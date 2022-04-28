@@ -3,6 +3,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 
 const app = express()
+app.use(express.json())
 
 const conn = require('./db/conn')
 
@@ -30,6 +31,7 @@ app.use('/politicians', politiciansRoutes)
 app.get("/", (req, res) => {
   res.render('root')
 })
+
 
 conn
   .sync()
