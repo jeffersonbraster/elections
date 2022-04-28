@@ -1,0 +1,11 @@
+<h1>Todas os Politicos:</h1>
+<ul class="task-list">
+  {{#if emptyPoliticians}}
+    <p>Não tem politicos</p>
+  {{/if}}
+  {{#each politicians}}
+    <li>
+      {{this.title}}
+    </li>
+  {{/each}}
+</ul>
