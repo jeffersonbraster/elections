@@ -6,15 +6,15 @@ module.exports = class PoliticiansController {
     res.render('politicians/showSync')
   }
 
-  static save = async (request, response) => {
-    const { election_type, year } = request.body
+  static save = async (req, res) => {
+    const { election_type, year } = req.body
 
-    const files = request.files
+    const files = req.files
 
     try {
-      const politicos = await ParseCSVToJson(files[0].filename)
+      const politicians = await ParseCSVToJson(files[0].filename)
 
-      return response.json(politicos)
+      res.render('politicians/listPoliticians', { politicians })
     } catch (error) {
       console.log(error)
     }

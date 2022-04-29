@@ -1,0 +1,21 @@
+<h1>Todos os Politicos:</h1>
+<table>
+  <thead>
+    <tr>
+      <th>NM_UE</th>
+      <th>DS_CARGO</th>
+      <th>NM_CANDIDATO</th>
+      <th>DS_SITUACAO_CANDIDATURA</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each politicians}}
+      <tr>
+        <td>{{this.NM_UE}}</td>
+        <td>{{this.DS_CARGO}}</td>
+        <td>{{this.NM_CANDIDATO}}</td>
+        <td>{{this.DS_SITUACAO_CANDIDATURA}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
