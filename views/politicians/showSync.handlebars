@@ -1,11 +1,13 @@
 <h1>Sincronizar politicos</h1>
-<form>
-  <input type="radio" name="election_type" value="vereador" />
-  <label for="vereador">Vereador e Prefeito</label>
-  <input type="radio" name="election_type" value="governador" />
-  <label for="governador">Governador e Presidente</label>
+<form method="POST" action="/politicians/list-politicos" enctype="multipart/form-data">
+  <input type="radio" name="election_type" value="prefeito" id="prefeito" />
+  <label for="prefeito">Vereador e Prefeito</label>
+  <input type="radio" name="election_type" value="presidente" id="presidente"/>
+  <label for="presidente">Governador e Presidente</label>
 
   <input type="number" name="year" value="2022" />
 
   <input type="file" name="files" multiple="true" accept=".csv">
+
+  <button type="submit">Enviar</button>
 </form>
