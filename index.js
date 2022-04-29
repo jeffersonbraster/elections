@@ -4,11 +4,6 @@ const exphbs = require('express-handlebars')
 
 const app = express()
 
-const conn = require('./db/conn')
-
-// Models
-const Politicians = require('./models/Politicians')
-
 // routes
 const politiciansRoutes = require('./routes/politiciansRoutes')
 
@@ -31,9 +26,9 @@ app.get("/", (req, res) => {
   res.render('root')
 })
 
-conn
-  .sync()
-  .then(() => {
+// conn
+//   .sync()
+//   .then(() => {
     app.listen(3000)
-  })
-  .catch((err) => console.log(err))
+  // })
+  // .catch((err) => console.log(err))
