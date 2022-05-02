@@ -3,6 +3,7 @@ import express from 'express'
 import exphbs from 'express-handlebars'
 
 const app = express()
+app.use(express.json())
 
 // routes
 import politiciansRoutes from '#routes/politiciansRoutes'
