@@ -15,14 +15,27 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
-    "fast-csv": "^4.3.6",
     "iconv": "^3.0.1",
-    "iconv-lite": "^0.6.3",
-    "multer": "^1.4.4",
-    "mysql2": "^2.3.0",
-    "sequelize": "^6.6.5"
+    "multer": "^1.4.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
+  },
+  "type": "module",
+  "imports": {
+    "#routes": "./routes/index.js",
+    "#routes/*": "./routes/*.js",
+    "#controllers": "./controllers/index.js",
+    "#controllers/*": "./controllers/*.js",
+    "#db": "./db/index.js",
+    "#db/*": "./db/*.js",
+    "#helpers": "./helpers/index.js",
+    "#helpers/*": "./helpers/*.js",
+    "#models": "./models/index.js",
+    "#models/*": "./models/*.js",
+    "#public": "./public/index.js",
+    "#public/*": "./public/*.js",
+    "#views": "./views/index.js",
+    "#views/*": "./views/*.js"
   }
 }
