@@ -1,11 +1,11 @@
-require('dotenv').config()
-const express = require('express')
-const exphbs = require('express-handlebars')
+import 'dotenv/config'
+import express from 'express'
+import exphbs from 'express-handlebars'
 
 const app = express()
 
 // routes
-const politiciansRoutes = require('./routes/politiciansRoutes')
+import politiciansRoutes from '#routes/politiciansRoutes'
 
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')

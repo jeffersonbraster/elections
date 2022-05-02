@@ -1,6 +1,5 @@
-const { DataTypes } = require('sequelize')
-
-const db = require('../db/conn')
+import { DataTypes } from 'sequelize'
+import db from '#db/conn'
 
 const Politicians = db.define('Politicians', {
   data_geracao: {
@@ -241,4 +240,4 @@ const Politicians = db.define('Politicians', {
   },
 })
 
-module.exports = Politicians
+export default Politicians

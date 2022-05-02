@@ -1,6 +1,6 @@
-const { ParseCSVToJson } = require('../helpers/parse-csv-to-json')
+import { ParseCSVToJson } from '#helpers/parse-csv-to-json'
 
-module.exports = class PoliticiansController {
+export default class PoliticiansController {
 
   static showSyncPoliticians = (req, res) => {
     res.render('politicians/showSync')
