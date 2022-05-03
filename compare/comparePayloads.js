@@ -1,12 +1,3 @@
-function isEmptyObject(obj) {
-  var name;
-
-  for (name in obj) {
-    return false;
-  }
-  return true;
-}
-
 function updatedComparePayloads(a, b) {
   const isSameCandidate = (a, b) => a.name === b.name && a.idade !== b.idade;
 
