@@ -14,7 +14,7 @@ const ParseCSVToJson = async (file) => {
   const buffer = iconvConverter.convert(content);
   const convertedFile = buffer.toString("utf8");
 
-  const test = updatedComparePayloads(obj1, obj2);
+  const test = createDiffPayloads(obj1, obj2);
   console.log(test);
 
   return await csv({ delimiter: [";"] }).fromString(convertedFile);

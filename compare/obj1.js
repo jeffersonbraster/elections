@@ -13,6 +13,13 @@ const obj1 = [
     estado: "rj",
     trabalho: "empresa x",
   },
+  {
+    name: "rhuan",
+    idade: 30,
+    estado: "",
+    cidade: "fortaleza",
+    trabalho: "globo",
+  },
 ];
 
 export default obj1;
