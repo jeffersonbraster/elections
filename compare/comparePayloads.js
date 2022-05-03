@@ -7,21 +7,38 @@ function isEmptyObject(obj) {
   return true;
 }
 
-function comparePayloads(obj1, obj2) {
-  var result = {};
-  var change;
+function updatedComparePayloads(a, b) {
+  const isSameCandidate = (a, b) => a.name !== b.name && a.idade === b.idade;
 
-  for (var key in obj1) {
-    if (typeof obj2[key] == "object" && typeof obj1[key] == "object") {
-      change = diff(obj1[key], obj2[key]);
-      if (isEmptyObject(change) === false) {
-        result[key] = change;
-      }
-    } else if (obj2[key] != obj1[key]) {
-      result[key] = obj2[key];
-    }
-  }
-  return result;
+  // Get items that only occur in the left array,
+  // using the compareFunction to determine equality.
+  const onlyInLeft = (left, right, compareFunction) =>
+    left.filter(
+      (leftValue) =>
+        !right.some((rightValue) => compareFunction(leftValue, rightValue))
+    );
+
+  const onlyInA = onlyInLeft(a, b, isSameCandidate);
+  //const onlyInB = onlyInLeft(b, a, isSameCandidate);
+
+  return [...onlyInA];
 }
 
-module.exports = { comparePayloads };
+function createDiffPayloads(a, b) {
+  const isSameCandidate = (a, b) => a.name === b.name && a.idade === b.idade;
+
+  // Get items that only occur in the left array,
+  // using the compareFunction to determine equality.
+  const onlyInLeft = (left, right, compareFunction) =>
+    left.filter(
+      (leftValue) =>
+        !right.some((rightValue) => compareFunction(leftValue, rightValue))
+    );
+
+  const onlyInA = onlyInLeft(a, b, isSameCandidate);
+  //const onlyInB = onlyInLeft(b, a, isSameCandidate);
+
+  return [...onlyInA];
+}
+
+export { createDiffPayloads, updatedComparePayloads };
